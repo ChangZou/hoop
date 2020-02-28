@@ -6,7 +6,32 @@
 	<artifactId>hoop</artifactId>
 	<version>1.0.0</version>
 	<name>hoop</name>
-	<description>hoop</description>
+	<description>Hoop is a url permission interceptor based on Spring boot</description>
+
+	<url>https://www.qingxing.top/</url>
+	<!-- 开源许可证，不知道如何选择，请参考https://github.com/qyxxjd/License -->
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<!-- 开发者信息 -->
+	<developers>
+		<developer>
+			<name>Chang Zou</name>
+			<email>502494803@qq.com</email>
+		</developer>
+	</developers>
+
+	<!-- 开源地址 -->
+	<scm>
+		<connection>scm:git:git@github.com:ChangZou/hoop.git</connection>
+		<developerConnection>scm:git:git@github.com:ChangZou/hoop.git</developerConnection>
+		<url>https://github.com/ChangZou/hoop</url>
+	</scm>
 
 	<properties>
 		<java.version>1.8</java.version>
