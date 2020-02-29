@@ -57,6 +57,8 @@ public class HoopCpnfig extends HoopConfig {
 //password为用户输入的密码，sale为盐，key为用户表中获取的加密后的密码
 if (encryotentService.verify(password,sale,key)){
     Map<String,String> map = new HashMap<>();
+    //这里的map用于生成token请务必保持key的与本文档一致，value存入用户唯一辨识id，这将直接影响用户权限的判断
+    //当然你也可以保存更多的数据这并不影响，你可以在下面了解token的使用
     map.put("id",roUser.getId()+"");
     loginStateService.loginSuccess(map);
     return new JsonResult(200,"登录成功!");
@@ -72,7 +74,7 @@ String salt = encryotentService.getSalt();
 String key = encryotentService.getEncryot(password,salt));
 ```
 - 在你的注销方法中使用`loginStateService.loginOut()`
-- 编写`implements``JudgeAuthorityService`获取用户权限列表的Service
+- 编写`implements JudgeAuthorityService`获取用户权限列表的Service
 ```java
 @Service
 public class JudgeAuthorityServiceImpl implements JudgeAuthorityService {
@@ -103,5 +105,27 @@ public class RoMenuPermissionController {
 @PostMapping("/hoop")
 public JsonResult test(){
     return new JsonResult(500);
+}
+```
+## 该如何使用token?
+>我们为你提供了`EncryotentServiceImpl`类你可以通过声明之后使用以下两个方法生成或解析token中的数据
+```java
+ /**
+ * token
+ * 生成token
+ * map为要藏匿于token中的数据
+ */
+@Override
+public String createToken(Map<String, String> claims) throws Exception {
+    return new TokenUtils().createToken(claims);
+}
+
+/**
+ * token
+ * 验证token，并返回存在其中的数据，如token过期或验证失败则返回null
+ */
+@Override
+public Map<String, String> verifyToken(String token) throws Exception {
+    return new TokenUtils().verifyToken(token);
 }
 ```
