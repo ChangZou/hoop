@@ -108,7 +108,7 @@ public JsonResult test(){
 }
 ```
 ## 该如何使用token?
->我们为你提供了`EncryotentServiceImpl`类你可以通过声明之后使用以下两个方法生成或解析token中的数据
+>我们为你提供了`EncryotentServiceImpl`类你可以通过`@Autowired`声明之后使用以下两个方法生成或解析token中的数据
 ```java
  /**
  * token
