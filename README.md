@@ -2,8 +2,8 @@
 
 <p align="center">
 <a href="#"><img alt="JDK" src="https://img.shields.io/badge/JDK-1.8-yellow.svg?style=flat-square"/></a>
-<a href="https://github.com/ChangZou/hoop"><img alt="Star" src="https://img.shields.io/github/stars/ChangZou/hoop?style=flat-square"></a>
-<a href="https://github.com/ChangZou/hoop"><img alt="GitHub last commit" src="https://img.shields.io/github/license/ChangZou/hoop?style=flat-square"></a>
+<a href="#"><img alt="Star" src="https://img.shields.io/github/stars/ChangZou/hoop?style=flat-square"></a>
+<a href="#"><img alt="GitHub last commit" src="https://img.shields.io/github/license/ChangZou/hoop?style=flat-square"></a>
 </p>
 
 ------
