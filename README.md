@@ -9,7 +9,7 @@
 ------
 ## 我们的社区
 
-<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=80940ca7549fe64402524f9376a881777f3cf1e3f9eee7bd426bc2febca3d050"><span>Hoop群(QQ)</span></a>
+<a target="blank" href="//shang.qq.com/wpa/qunwpa?idkey=80940ca7549fe64402524f9376a881777f3cf1e3f9eee7bd426bc2febca3d050"><span>Hoop群(QQ)</span></a>
 
 ## 它是什么
 Hoop是一个基于Spring boot的 controller 层权限拦截框架 
