@@ -7,7 +7,7 @@
 </p>
 
 ------
-## 我们的社区
+## 寻求帮助？
 
 <a target="blank" href="//shang.qq.com/wpa/qunwpa?idkey=80940ca7549fe64402524f9376a881777f3cf1e3f9eee7bd426bc2febca3d050"><span>Hoop群(QQ)</span></a>
 
