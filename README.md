@@ -51,6 +51,27 @@ public class HoopCpnfig extends HoopConfig {
 
 }
 ```
+- 在你的登录方法中添加
+```java
+//你可以通过@Autowired声明EncryotentService和LoginStateService并使用
+//password为用户输入的密码，sale为盐，key为用户表中获取的加密后的密码
+if (encryotentService.verify(password,sale,key)){
+    Map<String,String> map = new HashMap<>();
+    map.put("id",roUser.getId()+"");
+    loginStateService.loginSuccess(map);
+    return new JsonResult(200,"登录成功!");
+}
+```
+- 在你的注册方法中进行进行加密
+```java
+//注意这里使用的是PBKDF2加密，这里获取的salt是需要保存到用户表或其他地方的，当然你也可以将salt藏匿与密码中，验证时在分割密码提取出salt和原本的密文
+//如MD5则不需生成盐，只需给定一个全局固定的salt
+//生成盐
+String salt = encryotentService.getSalt();
+//获取加密后的密文
+String key = encryotentService.getEncryot(password,salt));
+```
+- 在你的注销方法中使用`loginStateService.loginOut()`
 - 编写`implements``JudgeAuthorityService`获取用户权限列表的Service
 ```java
 @Service
