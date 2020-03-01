@@ -20,7 +20,7 @@ Hoop是一个基于Spring boot的controller层接口级权限拦截框架
 - 集成单点登录
 - token验证
 - 采用jwt服务端无需存储登录状态
-- 提供多种密码加密方式 
+- 提供多种密码加密方式
 ## pom
 ```text
     <dependency>
