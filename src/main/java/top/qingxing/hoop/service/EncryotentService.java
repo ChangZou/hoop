@@ -19,7 +19,7 @@ public interface EncryotentService {
      * 对输入的密码进行验证
      *
      */
-    public boolean verify(String password, String salt, String key)
+    boolean verify(String password, String salt, String key)
             throws NoSuchAlgorithmException, InvalidKeySpecException;
 
     /**
@@ -27,24 +27,24 @@ public interface EncryotentService {
      * 根据password和salt生成密文
      *
      */
-    public String getEncryot(String password, String salt) throws NoSuchAlgorithmException,
+    String getEncryot(String password, String salt) throws NoSuchAlgorithmException,
             InvalidKeySpecException;
 
     /**
      * 随机盐
      */
-    public String getSalt() throws Exception;
+    String getSalt() throws Exception;
 
     /**
      * token
      * 生成token
      */
-    public String createToken(Map<String, String> claims) throws Exception;
+    String createToken(Map<String, String> claims) throws Exception;
 
 
     /**
      * token
      * 验证jwt，并返回数据
      */
-    public Map<String, String> verifyToken(String token) throws Exception;
+    Map<String, String> verifyToken(String token) throws Exception;
 }
