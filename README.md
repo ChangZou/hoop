@@ -32,7 +32,11 @@ Hoop是一个基于Spring boot的controller层接口级权限拦截框架
 ## Hoop的繁衍开源项目
 
 > 我正在努力完善Hoop的生态圈
+>
 > 如果你有想法或建议
+>
 > 如果你准备成为Hoop生态的一份子
+>
 > 请扫描下面的二维码联系我:
+>
 > <div align="center"><img width=400  heght=400 src="http://hoop.qingxing.top/img/wx.png"/><div>
