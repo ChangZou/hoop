@@ -8,7 +8,7 @@
 
 ------
 ## 官方文档
-<a target="blank" href="//hoop.qingxing.top"><span>官方文档</span></a> 
+<a target="blank" href="http://hoop.qingxing.top"><span>官方文档</span></a> 
 ## 寻求帮助？
 
 <a target="blank" href="//shang.qq.com/wpa/qunwpa?idkey=80940ca7549fe64402524f9376a881777f3cf1e3f9eee7bd426bc2febca3d050"><span>Hoop群(QQ)</span></a> 
@@ -35,4 +35,4 @@ Hoop是一个基于Spring boot的controller层接口级权限拦截框架
 > 如果你有想法或建议
 > 如果你准备成为Hoop生态的一份子
 > 请扫描下面的二维码联系我:
-> <div align="center"><img width=400  heght=400 src="//hoop.qingxing.top/img/wx.png"/><div>
+> <div align="center"><img width=400  heght=400 src="http://hoop.qingxing.top/img/wx.png"/><div>
