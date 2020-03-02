@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import top.qingxing.hoop.entity.MenusUrl;
+import top.qingxing.hoop.entity.SettingEnum;
 import top.qingxing.hoop.exceptionHandler.AccessDeniedException;
 import top.qingxing.hoop.exceptionHandler.ExceptionEnum;
 import top.qingxing.hoop.exceptionHandler.LoginNotException;
@@ -48,7 +49,7 @@ public class HoopLjAop {
             Cookie[] cookies =  request.getCookies();
             if(cookies != null){
                 for(Cookie cookie : cookies){
-                    if(cookie.getName().equals("uhooptoken")){
+                    if(cookie.getName().equals((String) SettingEnum.DOMAIN.getValue())){
                         token = cookie.getValue();
                         break;
                     }

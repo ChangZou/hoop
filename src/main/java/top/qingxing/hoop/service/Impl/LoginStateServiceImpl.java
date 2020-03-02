@@ -46,7 +46,7 @@ public class LoginStateServiceImpl implements LoginStateService {
             String token = encryotentService.createToken(map);
             //生成cookie
             HttpServletResponse response = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getResponse();
-            Cookie cookie = new Cookie("uhooptoken",token);
+            Cookie cookie = new Cookie((String) SettingEnum.COOKIENAME.getValue(),token);
             cookie.setMaxAge((int) SettingEnum.EXTIME.getValue() * 3600);
             cookie.setDomain((String)SettingEnum.DOMAIN.getValue());
             //返回新token
@@ -62,7 +62,7 @@ public class LoginStateServiceImpl implements LoginStateService {
         try {
             //生成cookie
             HttpServletResponse response = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getResponse();
-            Cookie cookie = new Cookie("uhooptoken",null);
+            Cookie cookie = new Cookie((String) SettingEnum.COOKIENAME.getValue(),null);
             cookie.setMaxAge(0);
             cookie.setDomain((String)SettingEnum.DOMAIN.getValue());
             //返回cookie

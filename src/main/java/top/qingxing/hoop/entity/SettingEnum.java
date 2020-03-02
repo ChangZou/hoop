@@ -14,6 +14,7 @@ public enum SettingEnum {
     SALESIZE(0),
     HASHSIZE(0),
     ITERATIONS(0),
+    COOKIENAME(""),
     SECRET(""),
     ISSUER(""),
     EXTIME(0),

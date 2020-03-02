@@ -50,10 +50,19 @@ public class SettingConfig {
         }
     }
     public static class Token{
-       private String secret = "";
-       private String issuer = "";
-       private int extime = 0;
-       private String domain = "";
+
+        private String cookiename = "uhooptoken";
+        private String secret = "";
+        private String issuer = "";
+        private int extime = 0;
+        private String domain = "";
+        public String getCookiename() {
+            return cookiename;
+        }
+
+        public void setCookiename(String cookiename) {
+            this.cookiename = cookiename;
+        }
 
         public String getSecret() {
             return secret;
@@ -111,6 +120,7 @@ public class SettingConfig {
         SettingEnum.SALESIZE.setValue(this.pbkdf.getSalesize());
         SettingEnum.HASHSIZE.setValue(this.pbkdf.getHashsize());
         SettingEnum.ITERATIONS.setValue(this.pbkdf.getIterations());
+        SettingEnum.COOKIENAME.setValue(this.token.getCookiename());
         SettingEnum.SECRET.setValue(this.token.getSecret());
         SettingEnum.ISSUER.setValue(this.token.getIssuer());
         SettingEnum.EXTIME.setValue(this.token.getExtime());
