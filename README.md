@@ -22,7 +22,7 @@ Hoop是一个基于Spring boot的controller层接口级权限拦截框架
 - 采用jwt服务端无需存储登录状态
 - 提供多种密码加密方式
 ## pom
-- 注：1.1.1版本bug已修复，1.1.1不建议使用
+- 注：1.1.1版本bug已修复，1.1.2之前版本不建议使用
 ```text
     <dependency>
         <groupId>top.qingxing</groupId>
