@@ -46,7 +46,7 @@ public class Md5Utils {
      * 对输入的密码进行验证
      *
      */
-    public boolean verify(String password, String key, String salt){
+    public boolean verify(String password, String salt, String key){
         // 把加密后的密文和原密文进行比较，相同则验证成功，否则失败
         return getEncryot(password,salt).equals(key);
     }
