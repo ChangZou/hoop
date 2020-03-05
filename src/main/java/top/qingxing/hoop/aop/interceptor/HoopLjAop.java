@@ -49,7 +49,7 @@ public class HoopLjAop {
             Cookie[] cookies =  request.getCookies();
             if(cookies != null){
                 for(Cookie cookie : cookies){
-                    if(cookie.getName().equals((String) SettingEnum.DOMAIN.getValue())){
+                    if(cookie.getName().equals((String) SettingEnum.COOKIENAME.getValue())){
                         token = cookie.getValue();
                         break;
                     }
