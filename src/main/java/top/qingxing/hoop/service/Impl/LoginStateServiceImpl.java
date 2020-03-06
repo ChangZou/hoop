@@ -48,6 +48,7 @@ public class LoginStateServiceImpl implements LoginStateService {
             HttpServletResponse response = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getResponse();
             Cookie cookie = new Cookie((String) SettingEnum.COOKIENAME.getValue(),token);
             cookie.setMaxAge((int) SettingEnum.EXTIME.getValue() * 3600);
+            cookie.setPath("/");
             cookie.setDomain((String)SettingEnum.DOMAIN.getValue());
             //返回新token
             response.addCookie(cookie);
