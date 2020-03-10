@@ -27,7 +27,7 @@ Hoop是一个基于Spring boot的controller层接口级权限拦截框架
     <dependency>
         <groupId>top.qingxing</groupId>
         <artifactId>hoop</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.3</version>
     </dependency>
 ```
 ## Hoop的繁衍开源项目
