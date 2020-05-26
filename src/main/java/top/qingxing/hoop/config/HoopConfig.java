@@ -7,26 +7,25 @@ import top.qingxing.hoop.service.Impl.EncryotentServiceImpl;
 import top.qingxing.hoop.service.Impl.LoginStateServiceImpl;
 
 @Configuration
-public class HoopConfig extends SettingConfig{
+public class HoopConfig extends SettingConfig {
 
     //加密入口类
     @Bean
-    public EncryotentServiceImpl encryotentServiceimpl(){
+    public EncryotentServiceImpl encryotentServiceimpl() {
         return new EncryotentServiceImpl();
     }
 
     //全局异常
     @Bean
-    public HoopExceptionHandler hoopExceptionHandler(){
-        return  new HoopExceptionHandler();
+    public HoopExceptionHandler hoopExceptionHandler() {
+        return new HoopExceptionHandler();
     }
 
     //登录调用配置
     @Bean
-    public LoginStateServiceImpl loginStateServiceimpl(){
+    public LoginStateServiceImpl loginStateServiceimpl() {
         return new LoginStateServiceImpl();
     }
-
 
 
 }

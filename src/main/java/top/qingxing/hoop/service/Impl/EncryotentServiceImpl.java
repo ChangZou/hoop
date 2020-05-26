@@ -22,27 +22,23 @@ import java.util.Map;
 public class EncryotentServiceImpl implements EncryotentService {
 
     /**
-     *
      * 对输入的密码进行验证
-     *
      */
     @Override
     public boolean verify(String password, String salt, String key)
             throws NoSuchAlgorithmException, InvalidKeySpecException {
         return EncryptEnum.valueOf((String) SettingEnum.ENCRYPT.getValue())
-                .verify(password,salt,key);
+                .verify(password, salt, key);
     }
 
     /**
-     *
      * 根据password和salt生成密文
-     *
      */
     @Override
     public String getEncryot(String password, String salt) throws NoSuchAlgorithmException,
             InvalidKeySpecException {
         return EncryptEnum.valueOf((String) SettingEnum.ENCRYPT.getValue())
-                .encrypt(password,salt);
+                .encrypt(password, salt);
     }
 
     @Override

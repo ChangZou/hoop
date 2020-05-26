@@ -14,8 +14,8 @@ import java.util.Map;
 public interface LoginStateService {
 
     //前端登录审核通过申请token 将token返回并将角色信息存入redis id为key
-    boolean loginSuccess (Map<String, String> map) throws Exception;
+    boolean loginSuccess(Map<String, String> map) throws Exception;
 
     //前端登录审核通过申请token 将token返回并将角色信息存入redis id为key
-    boolean loginOut () throws Exception;
+    boolean loginOut() throws Exception;
 }

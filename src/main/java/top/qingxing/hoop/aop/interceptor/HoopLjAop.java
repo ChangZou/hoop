@@ -16,6 +16,7 @@ import top.qingxing.hoop.exceptionHandler.LoginNotException;
 import top.qingxing.hoop.service.EncryotentService;
 import top.qingxing.hoop.service.JudgeAuthorityService;
 import top.qingxing.hoop.service.LoginStateService;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -35,21 +36,22 @@ public class HoopLjAop {
     JudgeAuthorityService judgeAuthorityService;
 
     @Pointcut("@within(top.qingxing.hoop.aop.interceptor.Hoop) || @annotation(top.qingxing.hoop.aop.interceptor.Hoop)")
-    public void lj(){}
+    public void lj() {
+    }
 
     @Around("lj()")
-    public Object around(ProceedingJoinPoint pjp)throws Throwable{
+    public Object around(ProceedingJoinPoint pjp) throws Throwable {
         int status = 200;
         Object obj = null;
         try {
             //获取Request  Response
             HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
             //获取token
-            String token  = null;
-            Cookie[] cookies =  request.getCookies();
-            if(cookies != null){
-                for(Cookie cookie : cookies){
-                    if(cookie.getName().equals((String) SettingEnum.COOKIENAME.getValue())){
+            String token = null;
+            Cookie[] cookies = request.getCookies();
+            if (cookies != null) {
+                for (Cookie cookie : cookies) {
+                    if (cookie.getName().equals((String) SettingEnum.COOKIENAME.getValue())) {
                         token = cookie.getValue();
                         break;
                     }
@@ -57,26 +59,26 @@ public class HoopLjAop {
             }
             //token鉴权
             Map<String, String> ares = encryotentService.verifyToken(token);
-            if (ares != null){
+            if (ares != null) {
                 //从sql中查找权限
                 List<MenusUrl> menusUrls = judgeAuthorityService.getmenurights(Integer.parseInt(ares.get("id")));
                 String userurl = JSON.toJSON(menusUrls).toString();
                 //判断权限
-                if(!userurl.contains("{\"url\":\""+request.getRequestURI()+"\"}")){
+                if (!userurl.contains("{\"url\":\"" + request.getRequestURI() + "\"}")) {
                     status = 403;
-                }else {
+                } else {
                     obj = pjp.proceed();
                 }
-            }else {
+            } else {
                 status = 401;
             }
         } catch (Throwable e) {
             e.printStackTrace();
             return null;
-        }finally {
-            if (status == 403){
+        } finally {
+            if (status == 403) {
                 throw new AccessDeniedException(ExceptionEnum.ACCESS_DENIED);
-            }else if (status == 401){
+            } else if (status == 401) {
                 throw new LoginNotException(ExceptionEnum.LOGIN_NOT);
             }
             return obj;

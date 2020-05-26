@@ -19,11 +19,11 @@ import java.util.Map;
  * @Date: 2020/2/14 下午2:39
  * @Version: 1.0
  */
-public class LoginNotException extends RuntimeException{
+public class LoginNotException extends RuntimeException {
     private int status;
     private String message;
 
-    public LoginNotException(ExceptionEnum exceptionEnum){
+    public LoginNotException(ExceptionEnum exceptionEnum) {
         this.status = exceptionEnum.getStatus();
         this.message = exceptionEnum.getMessage();
     }

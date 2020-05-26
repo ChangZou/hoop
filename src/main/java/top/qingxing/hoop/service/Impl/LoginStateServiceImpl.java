@@ -7,6 +7,7 @@ import top.qingxing.hoop.entity.SettingEnum;
 import top.qingxing.hoop.service.EncryotentService;
 import top.qingxing.hoop.service.JudgeAuthorityService;
 import top.qingxing.hoop.service.LoginStateService;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
@@ -30,11 +31,11 @@ public class LoginStateServiceImpl implements LoginStateService {
 
 
     @Override
-    public boolean loginSuccess (Map<String, String> map) throws Exception {
+    public boolean loginSuccess(Map<String, String> map) throws Exception {
         /**
          * @Method: loginSuccess
          * @Author: sober
-         * @Version:  1.0.0
+         * @Version: 1.0.0
          * @Description:
          * @param map
          * @Return: java.lang.String
@@ -46,14 +47,14 @@ public class LoginStateServiceImpl implements LoginStateService {
             String token = encryotentService.createToken(map);
             //生成cookie
             HttpServletResponse response = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getResponse();
-            Cookie cookie = new Cookie((String) SettingEnum.COOKIENAME.getValue(),token);
+            Cookie cookie = new Cookie((String) SettingEnum.COOKIENAME.getValue(), token);
             cookie.setMaxAge((int) SettingEnum.EXTIME.getValue() * 3600);
             cookie.setPath("/");
-            cookie.setDomain((String)SettingEnum.DOMAIN.getValue());
+            cookie.setDomain((String) SettingEnum.DOMAIN.getValue());
             //返回新token
             response.addCookie(cookie);
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
@@ -63,13 +64,13 @@ public class LoginStateServiceImpl implements LoginStateService {
         try {
             //生成cookie
             HttpServletResponse response = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getResponse();
-            Cookie cookie = new Cookie((String) SettingEnum.COOKIENAME.getValue(),null);
+            Cookie cookie = new Cookie((String) SettingEnum.COOKIENAME.getValue(), null);
             cookie.setMaxAge(0);
-            cookie.setDomain((String)SettingEnum.DOMAIN.getValue());
+            cookie.setDomain((String) SettingEnum.DOMAIN.getValue());
             //返回cookie
             response.addCookie(cookie);
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }

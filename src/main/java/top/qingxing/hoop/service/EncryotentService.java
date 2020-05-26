@@ -17,7 +17,6 @@ public interface EncryotentService {
     /**
      * pdkdf
      * 对输入的密码进行验证
-     *
      */
     boolean verify(String password, String salt, String key)
             throws NoSuchAlgorithmException, InvalidKeySpecException;
@@ -25,7 +24,6 @@ public interface EncryotentService {
     /**
      * pdkdf
      * 根据password和salt生成密文
-     *
      */
     String getEncryot(String password, String salt) throws NoSuchAlgorithmException,
             InvalidKeySpecException;

@@ -13,7 +13,7 @@ public class AccessDeniedException extends RuntimeException {
     private int status;
     private String message;
 
-    public AccessDeniedException(ExceptionEnum exceptionEnum){
+    public AccessDeniedException(ExceptionEnum exceptionEnum) {
         this.status = exceptionEnum.getStatus();
         this.message = exceptionEnum.getMessage();
     }

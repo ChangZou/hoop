@@ -34,9 +34,9 @@ public class TokenUtils {
         try {
             Algorithm algorithm = Algorithm.HMAC256((String) SettingEnum.SECRET.getValue());
             JWTCreator.Builder builder = JWT.create()
-                    .withIssuer((String)SettingEnum.ISSUER.getValue())
+                    .withIssuer((String) SettingEnum.ISSUER.getValue())
                     //设置过期时间
-                    .withExpiresAt(new Date(System.currentTimeMillis() + (int)SettingEnum.EXTIME.getValue() * 3600 * 1000));
+                    .withExpiresAt(new Date(System.currentTimeMillis() + (int) SettingEnum.EXTIME.getValue() * 3600 * 1000));
             claims.forEach(builder::withClaim);
             return builder.sign(algorithm);
         } catch (IllegalArgumentException e) {
@@ -52,7 +52,7 @@ public class TokenUtils {
         Map<String, Claim> map;
         try {
             algorithm = Algorithm.HMAC256((String) SettingEnum.SECRET.getValue());
-            JWTVerifier verifier = JWT.require(algorithm).withIssuer((String)SettingEnum.ISSUER.getValue()).build();
+            JWTVerifier verifier = JWT.require(algorithm).withIssuer((String) SettingEnum.ISSUER.getValue()).build();
             DecodedJWT jwt = verifier.verify(token);
             map = jwt.getClaims();
         } catch (Exception e) {

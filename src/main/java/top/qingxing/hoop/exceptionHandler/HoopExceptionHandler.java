@@ -24,20 +24,20 @@ public class HoopExceptionHandler {
     @ExceptionHandler(LoginNotException.class)
     @ResponseBody
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    public Map<String,Object> LoginNotException(LoginNotException loginnot) {
-        Map<String,Object> errorResultMap = new HashMap<>();
-        errorResultMap.put("status",loginnot.getStatus());
-        errorResultMap.put("message",loginnot.getMessage());
+    public Map<String, Object> LoginNotException(LoginNotException loginnot) {
+        Map<String, Object> errorResultMap = new HashMap<>();
+        errorResultMap.put("status", loginnot.getStatus());
+        errorResultMap.put("message", loginnot.getMessage());
         return errorResultMap;
     }
 
     @ExceptionHandler(AccessDeniedException.class)
     @ResponseBody
     @ResponseStatus(HttpStatus.FORBIDDEN)
-    public Map<String,Object> AccessDeniedException(AccessDeniedException acess) {
-        Map<String,Object> errorResultMap = new HashMap<>();
-        errorResultMap.put("status",acess.getStatus());
-        errorResultMap.put("message",acess.getMessage());
+    public Map<String, Object> AccessDeniedException(AccessDeniedException acess) {
+        Map<String, Object> errorResultMap = new HashMap<>();
+        errorResultMap.put("status", acess.getStatus());
+        errorResultMap.put("message", acess.getMessage());
         return errorResultMap;
     }
 }

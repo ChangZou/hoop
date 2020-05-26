@@ -12,10 +12,10 @@ package top.qingxing.hoop.exceptionHandler;
 public enum ExceptionEnum {
 
     //未登录
-    LOGIN_NOT(401,"用户认证失败！"),
+    LOGIN_NOT(401, "用户认证失败！"),
 
     //无权访问
-    ACCESS_DENIED(403,"权限认证失败!");
+    ACCESS_DENIED(403, "权限认证失败!");
 
     private int status;
 

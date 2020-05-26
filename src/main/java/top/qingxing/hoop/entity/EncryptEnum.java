@@ -21,24 +21,29 @@ import java.util.Map;
  */
 public enum EncryptEnum {
 
-    PBKDF2("PBKDF2"){
+    PBKDF2("PBKDF2") {
         public boolean verify(String password, String salt, String key) throws InvalidKeySpecException, NoSuchAlgorithmException {
-            return new PdkdfUtils().verify(password,salt,key);
+            return new PdkdfUtils().verify(password, salt, key);
         }
+
         public String encrypt(String password, String salt) throws InvalidKeySpecException, NoSuchAlgorithmException {
-            return new PdkdfUtils().getEncryot(password,salt);
+            return new PdkdfUtils().getEncryot(password, salt);
         }
     },
-    MD5("MD5"){
-        public boolean verify(String password, String salt, String key) throws InvalidKeySpecException, NoSuchAlgorithmException{
-            return new Md5Utils().verify(password,salt,key);
+    MD5("MD5") {
+        public boolean verify(String password, String salt, String key) throws InvalidKeySpecException, NoSuchAlgorithmException {
+            return new Md5Utils().verify(password, salt, key);
         }
-        public String encrypt(String password, String salt) throws InvalidKeySpecException, NoSuchAlgorithmException{
-            return new Md5Utils().getEncryot(password,salt);
+
+        public String encrypt(String password, String salt) throws InvalidKeySpecException, NoSuchAlgorithmException {
+            return new Md5Utils().getEncryot(password, salt);
         }
     };
-    public abstract String  encrypt(String password, String salt) throws InvalidKeySpecException, NoSuchAlgorithmException;
+
+    public abstract String encrypt(String password, String salt) throws InvalidKeySpecException, NoSuchAlgorithmException;
+
     public abstract boolean verify(String password, String salt, String key) throws InvalidKeySpecException, NoSuchAlgorithmException;
+
     private String value;
 
     public String getValue() {

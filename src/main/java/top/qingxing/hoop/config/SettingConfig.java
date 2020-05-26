@@ -20,7 +20,8 @@ public class SettingConfig {
     private final Pbkdf pbkdf = new Pbkdf();
     private final Token token = new Token();
     private String encrypt = "";
-    public static class Pbkdf{
+
+    public static class Pbkdf {
         private int salesize = 0;
         private int hashsize = 0;
         private int iterations = 0;
@@ -49,13 +50,15 @@ public class SettingConfig {
             this.iterations = iterations;
         }
     }
-    public static class Token{
+
+    public static class Token {
 
         private String cookiename = "uhooptoken";
         private String secret = "";
         private String issuer = "";
         private int extime = 0;
         private String domain = "";
+
         public String getCookiename() {
             return cookiename;
         }
@@ -115,7 +118,7 @@ public class SettingConfig {
 
     //基础设置
     @Bean
-    public void hoopSetting(){
+    public void hoopSetting() {
         SettingEnum.ENCRYPT.setValue(this.getEncrypt());
         SettingEnum.SALESIZE.setValue(this.pbkdf.getSalesize());
         SettingEnum.HASHSIZE.setValue(this.pbkdf.getHashsize());
