@@ -18,7 +18,7 @@ import java.util.Map;
  * @Date: 2020/2/14 下午3:05
  * @Version: 1.0
  */
-@ControllerAdvice
+
 public class HoopExceptionHandler {
 
     @ExceptionHandler(LoginNotException.class)
@@ -40,4 +40,5 @@ public class HoopExceptionHandler {
         errorResultMap.put("message", acess.getMessage());
         return errorResultMap;
     }
+
 }
