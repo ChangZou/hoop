@@ -23,11 +23,12 @@ Hoop是一个基于Spring boot的controller层接口级权限拦截框架
 - 提供多种密码加密方式
 ## pom
 - 注：1.1.1版本bug已修复，1.1.2之前版本不建议使用
+- 相关bug修复请前往releases
 ```text
     <dependency>
         <groupId>top.qingxing</groupId>
         <artifactId>hoop</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.3</version>
     </dependency>
 ```
 ## Hoop的繁衍开源项目
